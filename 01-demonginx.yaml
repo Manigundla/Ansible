@@ -12,12 +12,11 @@
       name: nginx
       state: started
 
----
 - name: installing git 
   hosts: git 
   become: true
   tasks:
   - name: install git
-    ansible.built.yum:
+    ansible.builtin.yum:
       name: git
       state: present
