@@ -1,0 +1,13 @@
+---
+- name: variables from play level
+  hosts: localhost
+  become: true
+  vars:
+    name: "Mani"
+    greetings: "How are you doing?"
+
+  tasks:
+  - name: printing name and greetings
+    ansible.buitlin.debug:
+      msg: "Hi, {{name}}.{{greetings}}"
+  
