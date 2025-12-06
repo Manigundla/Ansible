@@ -1,0 +1,7 @@
+---
+- name: Inventory level variables
+  hosts: localhost
+  tasks:
+  - name: checking iventory variables
+    ansible.builtin.debug:
+      msg: Hi, {{name}}.{{greetings}}.
