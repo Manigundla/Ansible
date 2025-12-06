@@ -8,6 +8,6 @@
 
   tasks:
   - name: printing name and greetings
-    ansible.buitlin.debug:
+    ansible.builtin.debug:
       msg: "Hi, {{name}}.{{greetings}}"
   
