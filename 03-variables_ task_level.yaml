@@ -1,0 +1,14 @@
+---
+- name: Task level variables
+  hosts: localhost
+  vars:
+    name: "Mani_playlevel"
+    greetings: "How are you doing?"
+
+  tasks:
+  - name: variables task level
+    vars:
+      name: "Mani_tasklevel"
+      greetings: "How are you doing?"
+    ansible.builtin.debug:
+      msg: Hi, {{name}}.{{greetings}}
