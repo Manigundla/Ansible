@@ -1,0 +1,14 @@
+---
+- name: varibales prompt level
+  hosts: localhost
+  vars_prompt:
+  - name: USERNAME
+    prompt: please enter you USERNAME
+    private: false
+  - password: PASSWORD
+    prompt: please enter your password
+    private: true
+  tasks:
+  - name: checking prompt variables
+    ansibele.builtin.debug:
+    msg: username is {{USERNAME}}, password is {{PASSWORD}};
