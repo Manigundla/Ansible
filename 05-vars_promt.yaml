@@ -10,5 +10,5 @@
     private: true
   tasks:
   - name: checking prompt variables
-    ansibele.builtin.debug:
-    msg: username is {{USERNAME}}, password is {{PASSWORD}};
+    ansibel.builtin.debug:
+     msg: username is {{USERNAME}}, password is {{PASSWORD}};
