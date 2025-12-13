@@ -1,0 +1,22 @@
+---
+- name: conditions
+  hosts: localhost
+  become: yes
+  tasks: 
+  - name: checking if roboshop user exixt or not
+    ansible.builtin.command: id roboshop
+    register: output #register helps to take the output of previous cmd into 'output' here.
+    ignore_errors: true #this can be used when we are expected errors and ignore them.
+  
+  - name: printing output
+    ansible.builtin.debug:
+      msg: "The output of roboshop is {{output}}"
+  
+  - name: printing return code/exit status from output
+    ansible.builtin.debug:
+      msg: "The return code is {{output.rc}}"
+
+  - name: creating user if not created
+    ansible.builtin.user:
+    - name: roboshop
+      when: output.rc != 0
