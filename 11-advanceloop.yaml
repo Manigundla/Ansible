@@ -5,8 +5,8 @@
   tasks:
   - name: installing packages 
     ansible.builtin.yum:
-      name: {{item.name}} 
-      state: {{item.state}}
+      name: "{{item.name}}" 
+      state: "{{item.state}}"
     loop:
     - {name: 'mongodb', state: 'present'}
     - {name: 'nginx', state: 'absent'}
