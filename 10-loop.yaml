@@ -1,11 +1,11 @@
 ---
-- name:
+- name: installing packages
   hosts: localhost
   become: true
   tasks:
   - name: installing packages 
     ansible.builtin.yum:
-    - name: {{item}} 
+      name: {{item}} 
       state: present
     loop:
     - mongodb
