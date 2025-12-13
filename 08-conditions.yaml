@@ -19,4 +19,4 @@
   - name: creating user if not created
     ansible.builtin.user:
       name: roboshop
-      when: output.rc != 0
+    when: output.rc != 0
